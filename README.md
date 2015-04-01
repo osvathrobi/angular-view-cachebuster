@@ -1,7 +1,7 @@
 # angular-view-cachebuster
 On-deployment cache buster for Angular projects
 
-Define a version number for your app. After deployment the http interceptor will bust the cache for your views by appending the version number to the request. Uses localstorage to match detect if cache busting is needed to increase performance.
+Define a version number for your app. After deployment the http interceptor will bust the cache for your views by appending the version number to the request. 
 
 ## Usage
 
@@ -16,18 +16,18 @@ var app = angular.module('myApp', ['angularViewCachebuster']);
 ```
 
 Optionally declare `AngularViewCachebusterProvider` for additional settings at config phase
-```
+``` javascript
 .config(function(AngularViewCachebusterProvider){});
 ```
 
 ## Documentation
 
-Set the version string
-```
+Set the version string (default: 0.0.0)
+``` javascript
 AngularViewCachebusterProvider.setVersion('0.0.1b');
 ```
 
-Set noCache. This will append the timestamp to each request
-```
+Set noCache. This will append the timestamp to each request (default: false)
+``` javascript
 AngularViewCachebusterProvider.setNoCache();
 ```
