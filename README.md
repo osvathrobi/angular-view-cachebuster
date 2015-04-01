@@ -22,7 +22,7 @@ Optionally declare `AngularViewCachebusterProvider` for additional settings at c
 
 ## Documentation
 
-Set the version string (default: 0.0.0)
+Set the version string. This will be appended to each request. (default: 0.0.0)
 ``` javascript
 AngularViewCachebusterProvider.setVersion('0.0.1b');
 ```
