@@ -1,25 +1,25 @@
 angular.module("angularViewCachebuster", [])
-    .provider('AngularViewCachebuster', function() {
-    	var debug = true;
-    	
-        this.initialize = function(httpProvider) {
+    .provider('AngularViewCachebuster', function($httpProvider) {
+        var debug = true;
 
-            var interceptor = function($templateCache) {
+        var interceptor = function($templateCache) {
 
-                return {
-                    'request': function(request) {                                                
-                        if (request.method === 'GET' && (request.url.indexOf('.html')!==-1) && $templateCache.get(request.url) === undefined) {
-                        	if(debug) { console.log('intercepting..', request); }
-                            
-                            request.url = request.url + '?time=' + new Date().getTime();
+            return {
+                'request': function(request) {
+                    if (request.method === 'GET' && (request.url.indexOf('.html') !== -1) && $templateCache.get(request.url) === undefined) {
+                        if (debug) {
+                            console.log('intercepting..', request);
                         }
-                        return request;
+
+                        request.url = request.url + '?time=' + new Date().getTime();
                     }
+                    return request;
                 }
             }
+        }
 
-            httpProvider.interceptors.push(interceptor);
-        };
+        $httpProvider.interceptors.push(interceptor);
+
 
         this.$get = [
 
