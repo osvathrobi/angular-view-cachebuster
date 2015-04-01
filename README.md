@@ -19,3 +19,11 @@ Optionally declare `AngularViewCachebusterProvider` for additional settings at c
 ```
 .config(function(AngularViewCachebusterProvider){});
 ```
+
+## Documentation
+
+Set the version string
+```AngularViewCachebusterProvider.setVersion('0.0.1b');```
+
+Set noCache. This will append the timestamp to each request
+```AngularViewCachebusterProvider.setNoCache();```
