@@ -3,7 +3,7 @@ angular.module("angularViewCachebuster", [])
     	var noCache = false;
     	var version = '0.0.0';
 
-        var debug = false;
+        var debug = true;
 
         var interceptor = function($templateCache) {        	
             return {

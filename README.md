@@ -1,7 +1,7 @@
 # angular-view-cachebuster
-On-deployment cache buster for Angular projects
+On-deployment cache buster for Angular projects.
 
-Define a version number for your app. After deployment the http interceptor will bust the cache for your views by appending the version number to the request. 
+Http interceptor module for AngularJS to provide deployment based cache busting for your views by appending the version number to the request. 
 
 ## Usage
 
