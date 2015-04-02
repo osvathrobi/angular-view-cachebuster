@@ -1,0 +1,31 @@
+{
+  "name": "angular-view-cachebuster",
+  "main": "angular-view-cachebuster.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/osvathrobi/angular-view-cachebuster",
+  "authors": [
+    "Robert Osvath Boros <osvathrobi@yahoo.com>"
+  ],
+  "description": "Http interceptor module for AngularJS to provide deployment based cache busting for your views by appending the version number to the request.",
+  "keywords": [
+    "angularjs",
+    "cache",
+    "buster",
+    "angularjs",
+    "view",
+    "cache",
+    "angularjs",
+    "deployment",
+    "based",
+    "cache",
+    "buster"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
