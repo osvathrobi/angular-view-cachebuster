@@ -5,7 +5,13 @@ Http interceptor module for AngularJS to provide deployment based cache busting 
 
 ## Usage
 
-Include the required library 
+Install through bower
+
+```
+bower install angular-view-cachebuster
+```
+
+Or manually include the required library 
 ```html
 <script src="angular-view-cachebuster.js"></script>
 ```
