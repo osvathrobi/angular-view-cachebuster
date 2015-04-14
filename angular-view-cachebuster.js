@@ -1,11 +1,11 @@
 angular.module("angularViewCachebuster", [])
-    .provider('AngularViewCachebuster', function($httpProvider) {
-    	var noCache = false;
-    	var version = '0.0.0';
+    .provider('AngularViewCachebuster', ['$httpProvider', function($httpProvider) {
+        var noCache = false;
+        var version = '0.0.0';
 
         var debug = false;
 
-        var interceptor = function($templateCache) {        	
+        var interceptor = ['$templateCache', function($templateCache) {         
             return {
                 'request': function(request) {
                     if (request.method === 'GET' && (request.url.indexOf('.html') !== -1) && $templateCache.get(request.url) === undefined) {
@@ -14,26 +14,26 @@ angular.module("angularViewCachebuster", [])
                         }
 
                         if(noCache) {
-                        	request.url = request.url + '?time=' + new Date().getTime();
+                            request.url = request.url + '?time=' + new Date().getTime();
                         } else {
-                        	request.url = request.url + '?v=' + version;
+                            request.url = request.url + '?v=' + version;
                         }
                     }
                     return request;
                 }
             }
-        };
+        }];
 
         $httpProvider.interceptors.push(interceptor);
 
         // use timestamp for each request
         this.setNoCache = function() {
-        	noCache = true;
+            noCache = true;
         };
 
         // set version
         this.setVersion = function(v) {
-        	version = v;
+            version = v;
         };
 
         this.$get = [
@@ -43,4 +43,4 @@ angular.module("angularViewCachebuster", [])
             }
         ];
 
-    });
+    }]);
